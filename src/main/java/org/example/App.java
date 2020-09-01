@@ -17,8 +17,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Velocity.fillList();
-        Velocity velocity = new Velocity(90, 11, 44);
         scene = new Scene(loadFXML("primary"));
         stage.setScene(scene);
         stage.show();
@@ -33,7 +31,10 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        Velocity.fillList();
+        Velocity velocity = new Velocity(90, 11, 44);
         launch();
     }
 

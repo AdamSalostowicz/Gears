@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+<GridPane alignment="CENTER" prefHeight="200" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="16.67" />
+        <ColumnConstraints percentWidth="16.67" />
+        <ColumnConstraints percentWidth="16.67" />
+        <ColumnConstraints percentWidth="16.67" />
+        <ColumnConstraints percentWidth="16.66" />
+        <ColumnConstraints percentWidth="16.66" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <VBox prefHeight="Infinity" prefWidth="Infinity" GridPane.columnIndex="0">
+         <children>
+            <Label text="Size" />
+            <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+            <ChoiceBox prefWidth="150.0" />
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <Label text="Width" />
+            <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </SplitMenuButton>
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+         <children>
+            <Label text="Cadence" />
+            <Spinner />
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+         <children>
+            <Label text="Chainring" />
+            <Spinner />
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4">
+         <children>
+            <Label text="Casette" />
+            <Spinner />
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5">
+         <children>
+            <Label text="Speed" />
+            <ChoiceBox prefWidth="150.0" />
+         </children></VBox>
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</GridPane>
