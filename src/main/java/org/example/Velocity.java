@@ -8,7 +8,7 @@ public class Velocity {
     private double cadence;
     private double numberTeethOfCasette;
     private double numberTeethOfChainring;
-    private static LinkedList<Wheel> wheels;
+    public static LinkedList<Wheel> wheels;
     private double circumference;
 
     public Velocity(double cadence, double numberTeethOfCasette, double numberTeethOfChainring) throws IOException {
