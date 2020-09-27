@@ -19,27 +19,27 @@
       <VBox alignment="CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="10.0" GridPane.columnIndex="0">
          <children>
             <Label text="Size" />
-            <ChoiceBox fx:id="choiceBoxSize" onAction="#fillSecondChoiceBox" prefWidth="150.0" />
+            <ChoiceBox fx:id="choiceBoxSize" onAction="#fillSecondChoiceBox"  prefWidth="150.0" />
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
          <children>
             <Label text="Width" />
-            <ChoiceBox fx:id="choiceSecondBoxSize" prefWidth="150.0" />
+            <ChoiceBox fx:id="choiceSecondBoxSize" onAction="#calculateSpeed" prefWidth="150.0" />
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2">
          <children>
             <Label text="Cadence" />
-            <Spinner fx:id="cadence" amountToStepBy="1" editable="true" max="200" min="1" />
+            <Spinner fx:id="cadence" initialValue="90" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="200" min="1" />
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3">
          <children>
             <Label text="Chainring" />
-            <Spinner fx:id="chainring" amountToStepBy="1" editable="true" max="60" min="20" />
+            <Spinner fx:id="chainring" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="60" min="20" />
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4">
          <children>
             <Label text="Casette" />
-            <Spinner fx:id="casette" amountToStepBy="1" editable="true" max="51" min="10" />
+            <Spinner fx:id="casette" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="51" min="10" />
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="5">
          <children>

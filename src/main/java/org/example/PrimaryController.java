@@ -29,6 +29,7 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         fillChoiceBox();
+        calculateSpeed();
     }
 
     private void fillChoiceBox() {
@@ -55,6 +56,7 @@ public class PrimaryController implements Initializable {
             }
             choiceSecondBoxSize.getItems().addAll(sizeList);
         }
+        calculateSpeed();
     }
 
     @FXML
@@ -74,6 +76,7 @@ public class PrimaryController implements Initializable {
         System.out.println("circumstances = " + circumstances);
 
         speed = (circumstances * cad * 3 * ring) / (50000 * cas);
+        speed = Math.round(speed*10)/10.0;
         System.out.println(speed);
         speedLabel.setText(String.valueOf(speed));
     }
@@ -93,6 +96,7 @@ public class PrimaryController implements Initializable {
                 return circumstances;
             }
         }
+        System.out.println("Calculate speed is working!");
         return 0;
     }
 }
