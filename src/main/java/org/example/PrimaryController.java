@@ -2,6 +2,7 @@ package org.example;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
@@ -59,26 +60,24 @@ public class PrimaryController implements Initializable {
         calculateSpeed();
     }
 
+    private void centerTextInBox() {
+
+    }
+
     @FXML
     private void calculateSpeed() {
         String size = choiceBoxSize.getValue();
-        System.out.println("size = " + size);
         String width = choiceSecondBoxSize.getValue();
-        System.out.println("width = " + width);
         int cad = (int) cadence.getValue();
-        System.out.println("cadence = " + cad);
         int cas = (int) casette.getValue();
-        System.out.println("casette = " + cas);
         int ring = (int) chainring.getValue();
-        System.out.println("chainring = " + ring);
         double speed;
         double circumstances = calculateCircumstance(size, width);
-        System.out.println("circumstances = " + circumstances);
 
         speed = (circumstances * cad * 3 * ring) / (50000 * cas);
         speed = Math.round(speed*10)/10.0;
-        System.out.println(speed);
         speedLabel.setText(String.valueOf(speed));
+        System.out.println("Calculate speed is working!");
     }
 
     private double calculateCircumstance(String size, String width) {
@@ -96,7 +95,6 @@ public class PrimaryController implements Initializable {
                 return circumstances;
             }
         }
-        System.out.println("Calculate speed is working!");
         return 0;
     }
 }

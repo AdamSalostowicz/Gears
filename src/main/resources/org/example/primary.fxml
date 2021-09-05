@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="CENTER" prefHeight="200" prefWidth="1000" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
+<GridPane fx:id="GridPane" alignment="CENTER" prefHeight="300" prefWidth="1045" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
     <columnConstraints>
         <ColumnConstraints percentWidth="16.67" />
         <ColumnConstraints percentWidth="16.67" />
@@ -16,34 +17,42 @@
         <RowConstraints vgrow="ALWAYS" />
     </rowConstraints>
    <children>
-      <VBox alignment="CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="10.0" GridPane.columnIndex="0">
+      <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="0">
          <children>
-            <Label text="Size" />
-            <ChoiceBox fx:id="choiceBoxSize" onAction="#fillSecondChoiceBox"  prefWidth="150.0" />
+            <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wheelSize.png" />
+               </image>
+            </ImageView>
+            <Label style="-fx-font-size: 16" text="Size" />
+            <ChoiceBox fx:id="choiceBoxSize" stylesheets="@style.css" onAction="#fillSecondChoiceBox" prefWidth="150.0"/>
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
          <children>
-            <Label text="Width" />
-            <ChoiceBox fx:id="choiceSecondBoxSize" onAction="#calculateSpeed" prefWidth="150.0" />
+            <ImageView fitHeight="300.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" >
+                <Image url="@Tire2.png" />
+            </ImageView>
+            <Label style="-fx-font-size: 16" text="Width" textFill="white" />
+            <ChoiceBox fx:id="choiceSecondBoxSize" onAction="#calculateSpeed" prefWidth="150.0" stylesheets="@style.css"/>
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="2">
          <children>
-            <Label text="Cadence" />
-            <Spinner fx:id="cadence" initialValue="90" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="200" min="1" />
+            <Label style="-fx-font-size: 16" text="Cadence" textFill="white" />
+            <Spinner fx:id="cadence" amountToStepBy="1" styleClass="arrows-on-left-vertical" editable="true" initialValue="90" max="200" min="1" onMouseClicked="#calculateSpeed" stylesheets="@style.css"/>
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="3">
          <children>
-            <Label text="Chainring" />
-            <Spinner fx:id="chainring" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="60" min="20" />
+            <Label style="-fx-font-size: 16" text="Chainring" />
+            <Spinner fx:id="chainring" amountToStepBy="1" styleClass="arrows-on-left-vertical" editable="true" max="60" min="20" onMouseClicked="#calculateSpeed" stylesheets="@style.css"/>
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="4">
          <children>
-            <Label text="Casette" />
-            <Spinner fx:id="casette" onMouseClicked="#calculateSpeed" amountToStepBy="1" editable="true" max="51" min="10" />
+            <Label style="-fx-font-size: 16" text="Casette" />
+            <Spinner fx:id="casette" amountToStepBy="1" styleClass="arrows-on-left-vertical" editable="true" max="51" min="10" onMouseClicked="#calculateSpeed" stylesheets="@style.css"/>
          </children></VBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="5">
          <children>
-            <Label text="Speed" />
+            <Label style="-fx-font-size: 16" text="Speed" />
             <Label fx:id="speedLabel" onMouseClicked="#calculateSpeed" prefWidth="150.0" style="-fx-font-size: 30; -fx-alignment: center" />
          </children></VBox>
    </children>
